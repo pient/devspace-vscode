@@ -1,0 +1,260 @@
+{
+  "name": "vscode-plugin-devspace",
+  "displayName": "vscode-plugin-devspace",
+  "description": "vscode plugin for devspace",
+  "version": "0.1.0",
+  "icon": "resources/logo/logo.png",
+  "publisher": "devs",
+  "engines": {
+    "vscode": "^1.46.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*",
+    "onView:zf",
+    "onCommand:zf.openProjectsConfig",
+    "onCommand:zf.addProjectGroup"
+  ],
+  "main": "./out/src/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mainView",
+          "title": "中通财金",
+          "icon": "./resources/logo/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "workspaceExplorer",
+          "name": "我的项目",
+          "when": "zf-workspace-show-in-explorer"
+        }
+      ],
+      "mainView": [
+        {
+          "id": "projectsExplorer",
+          "name": "我的项目"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "workbench.action.reloadWindow",
+        "title": "重新加载"
+      },
+      {
+        "command": "zf.general.welcome",
+        "title": "Zf Welcome"
+      },
+      {
+        "command": "zf.workspace.apiDoc.refresh",
+        "title": "刷新",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "zf.workspace.apiDoc.link",
+        "title": "文档链接",
+        "icon": "$(link-external)"
+      },
+      {
+        "command": "zf.workspace.apiDoc.search",
+        "title": "查询",
+        "icon": "$(search)"
+      },
+      {
+        "command": "zf.workspace.apiDoc.codegen",
+        "title": "生成代码",
+        "icon": "$(debug-start)"
+      },
+      {
+        "command": "zf.workspace.apiDoc.quickCode",
+        "title": "快速编码",
+        "icon": "$(debug-start)"
+      },
+      {
+        "command": "zf.workspace.apiDoc.view",
+        "title": "查看",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "zf.workspace.apiDoc.newView",
+        "title": "新Tab查看",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "zf.workspace.apiDoc.setTag",
+        "title": "设置接口类型",
+        "icon": "$(tag-add)"
+      },
+      {
+        "command": "zf.workspace.general.link",
+        "title": "常用链接"
+      },
+      {
+        "command": "zf.projects.openConfig",
+        "title": "中通财金: 编辑项目",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "zf.projects.refreshConfig",
+        "title": "中通财金: 刷新项目",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "zf.projects.disableProject",
+        "title": "禁用项目"
+      },
+      {
+        "command": "zf.projects.removeProject",
+        "title": "删除项目"
+      },
+      {
+        "command": "zf.projects.renameProject",
+        "title": "重命名项目"
+      },
+      {
+        "command": "zf.projects.openProject",
+        "title": "打开"
+      },
+      {
+        "command": "zf.projects.addToFavorites",
+        "title": "收藏"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "zf.workspace.apiDoc.refresh",
+          "when": "view == workspaceExplorer",
+          "group": "navigation@01"
+        },
+        {
+          "command": "workbench.action.reloadWindow",
+          "when": "view == workspaceExplorer",
+          "group": "inline@01"
+        },
+        {
+          "command": "zf.projects.openConfig",
+          "when": "view == projectsExplorer",
+          "group": "navigation@10"
+        },
+        {
+          "command": "zf.projects.refreshConfig",
+          "when": "view == projectsExplorer",
+          "group": "navigation@11"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "zf.workspace.apiDoc.quickCode",
+          "when": "view == workspaceExplorer && viewItem == api",
+          "group": "inline@1"
+        },
+        {
+          "command": "zf.workspace.apiDoc.view",
+          "when": "view == workspaceExplorer && viewItem == api",
+          "group": "inline@2"
+        },
+        {
+          "command": "zf.workspace.apiDoc.setTag",
+          "when": "view == workspaceExplorer && viewItem == api",
+          "group": "inline@3"
+        },
+        {
+          "command": "zf.workspace.apiDoc.search",
+          "when": "view == workspaceExplorer && viewItem =~ /^(api_project-2|api_category)$/",
+          "group": "inline@1"
+        },
+        {
+          "command": "zf.workspace.apiDoc.codegen",
+          "when": "view == workspaceExplorer && viewItem =~ /^(api_project?)/",
+          "group": "operation@1"
+        },
+        {
+          "command": "zf.workspace.apiDoc.newView",
+          "when": "view == workspaceExplorer && viewItem == api",
+          "group": "operation@1"
+        },
+        {
+          "command": "zf.workspace.apiDoc.link",
+          "when": "view == workspaceExplorer && viewItem =~ /^(api_project-2|api_category|api)$/",
+          "group": "operation@2"
+        },
+        {
+          "command": "zf.workspace.apiDoc.refresh",
+          "when": "view == workspaceExplorer",
+          "group": "operation@3"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "中通财金",
+      "properties": {
+        "zf.apiDoc.defaultUrl": {
+          "type": "string",
+          "default": "http://yapi.dev.ztosys.com",
+          "markdownDescription": "Api文档地址"
+        },
+        "zf.workspace.hideWhenEmpty": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "当前工作区内没有中通财金项目则不显示"
+        },
+        "zf.workspace.showInExplorer": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "是否在Vs Code资源管理器内显示扩展"
+        },
+        "zf.logDebugInfo": {
+          "type": "boolean",
+          "default": true,
+          "description": "记录日志"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "npm run clean && npm run compile",
+    "compile": "tsc -p ./",
+    "clean": "rimraf -rf ./out",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "pretest": "npm run compile && npm run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "@devspace/vscode-apidoc": "^0.1.0",
+    "@devspace/vscode-core": "^0.1.0",
+    "axios": "^0.20.0",
+    "error-ex": "^1.3.2",
+    "fast-safe-stringify": "^2.0.7",
+    "fs-extra": "^9.0.1",
+    "handlebars": "^4.7.6",
+    "lodash": "^4.17.20",
+    "open": "^7.2.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.1",
+    "@types/glob": "^7.1.3",
+    "@types/lodash": "^4.14.161",
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^14.0.27",
+    "@types/vscode": "^1.46.0",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "eslint": "^7.6.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.0.1",
+    "typescript": "^3.8.3",
+    "vsce": "^1.80.0",
+    "vscode-test": "^1.4.0"
+  }
+}

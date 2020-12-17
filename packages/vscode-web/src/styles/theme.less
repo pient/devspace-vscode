@@ -1,0 +1,50 @@
+@import './variables.less';
+@import './q.less';
+
+@font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑',
+  Arial, sans-serif;
+@text-color: #333;
+@body-background: @bg-color;
+@font-size-small: 0.8rem;
+@primary-color: @primary;
+@border-radius: 3px;
+
+// ivu variables
+
+// ivu base
+@border-radius-base: @border-radius;
+@font-size-base: 12px;
+@font-size-large: 14px;
+@text-size: @font-size-base;
+
+// ivu button
+@padding-md: 14px;
+@btn-height-base: 28px;
+@btn-border-radius: @border-radius;
+
+// ivu input
+@input-height-base: 28px;
+
+// ivu layout
+@layout-header-background: lighten(@bg-color, 2%);
+@layout-sider-background: lighten(@dark, 5%);
+@layout-body-background: @bg-color;
+@layout-header-height: 50px;
+@layout-header-padding: 0;
+
+// ivu menu
+@menu-dark-title: transparent;
+
+// ivu Avatar
+@avatar-size-base: 28px;
+
+.content-header() {
+  padding: 10px 12px;
+}
+
+.border-shadow(@borderColor: @border-color) {
+  box-shadow: 0 0 3px @borderColor;
+}
+
+@select-shadow: 0 0 3px lighten(@primary, 5%);
+@selected-shadow: 0 0 5px @primary;

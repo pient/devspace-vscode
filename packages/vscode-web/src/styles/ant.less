@@ -1,0 +1,227 @@
+@import "./theme.less";
+@import "~ant-design-vue/lib/style/index.less";
+
+.ant {
+  &-btn {
+    font-weight: bold;
+    padding: 0 8px;
+
+    .icon-right {
+      margin-left: 4px;
+      line-height: 1.5;
+    }
+
+    &-small {
+      font-size: 12px;
+    }
+
+    &-default {
+      background: @bg-color;
+    }
+
+    &.link {
+      font-weight: inherit;
+      color: @link-color;
+      background: transparent;
+      border: 0;
+    }
+  }
+
+  &-btn + &-btn {
+    margin-left: 10px;
+  }
+
+  &-btn-group {
+    &.padding-sm {
+      button.ivu-btn-small {
+        padding: 0 2px;
+      }
+    }
+  }
+
+  &-card {
+    &.full-body &-body {
+      height: 100%;
+    }
+
+    &-extra {
+      top: 5px;
+      right: 10px;
+    }
+  }
+
+  &-tabs {
+    &.no-content &-bar {
+      margin-bottom: 0;
+    }
+
+    &-nav &-tab-active {
+      font-weight: bold;
+    }
+
+    &-mini &-tab {
+      padding: 10px 16px;
+    }
+  }
+
+  &-tooltip {
+    &-inner {
+      min-height: 30px;
+      padding: 6px 8px;
+    }
+  }
+
+  &-cascader {
+    &-label {
+      line-height: 27px;
+    }
+  }
+
+  &-table {
+    th {
+      background: @bg-color;
+      background-image: linear-gradient(#fff, @bg-color);
+    }
+
+    &-header {
+      thead tr th {
+        padding: 5px 0;
+      }
+    }
+
+    &-row-hover {
+      .list-item-actions {
+        display: block;
+      }
+    }
+
+    &-cell {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    &-wrapper.list-table {
+      border-left: 0;
+
+      .table-col {
+        padding: 5px;
+        position: relative;
+
+        &.col-content {
+          display: flex;
+
+          .col-detail {
+            padding: 5px 10px;
+          }
+        }
+
+        .col-title {
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 24px;
+        }
+
+        .col-text {
+          font-size: @text-size;
+        }
+
+        .col-subtitle {
+          font-size: 12px;
+          color: @tip-color;
+        }
+      }
+    }
+
+    &-wrapper.list-table &-border {
+      td {
+        border-right: 0;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &-form {
+    &.padding {
+      padding: 30px 40px;
+    }
+
+    &-item {
+      margin-bottom: 20px;
+
+      &-error-tip {
+        padding-top: 2px;
+      }
+
+      &-label {
+        font-weight: bold;
+      }
+
+      &-content {
+        .tip {
+          opacity: 0.8;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  &-input {
+    &-wrapper.auto-width {
+      width: auto;
+    }
+  }
+
+  &-modal {
+    top: auto;
+
+    &-fullscreen {
+      top: 0;
+    }
+
+    &-header {
+      background: @bg-color;
+      border-top-left-radius: @border-radius;
+      border-top-right-radius: @border-radius;
+    }
+
+    &-wrap {
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 0;
+    }
+
+    &-close {
+      .ivu-icon-ios-close {
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+
+    &-body {
+      padding: 0px;
+    }
+
+    &-wrap.fixed {
+      display: flex;
+      padding: 0;
+    }
+
+    &-wrap.fixed &-body {
+      max-height: 85vh;
+      overflow: scroll;
+    }
+
+    &-wrap.fixed & {
+      margin-top: -5vh;
+    }
+  }
+}

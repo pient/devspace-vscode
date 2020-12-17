@@ -1,0 +1,61 @@
+{
+  "window.zoomLevel": 0,
+  "breadcrumbs.enabled": true,
+  "files.autoSave": "onFocusChange", // 离开页面自动保存
+  "editor.tabSize": 2, // 缩进，tab格数
+  // 显示编辑时的控制字符（markdown中删除不干净出现的“s”）
+  "editor.renderControlCharacters": true,
+  // 每次保存的时候自动格式化(关闭，实用自定义格式化)
+  "editor.formatOnSave": true,
+  // 在保存时运行的代码操作类型。
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "workbench.editor.showTabs": true,
+  "git.ignoreMissingGitWarning": true, // 忽略“缺失git”的警告
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  // #让函数(名)和后面的括号之间加个空格
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  // jsx中使用emmet自动补全代码
+  "emmet.triggerExpansionOnTab": true,
+  // 让vue中的js按编辑器自带的ts格式进行格式化
+  "vetur.format.defaultFormatter.js": "prettier",
+  // "vetur.format.defaultFormatter.js": "vscode-typescript",
+  // "vetur.format.defaultFormatterOptions": {
+  //   "js-beautify-html": {
+  //     "wrap_attributes": "force-aligned"
+  //   },
+  //   // vue文件转换单引号、去掉分号
+  //   "prettier": {
+  //     // "printWidth": 120,
+  //     "semi": false,
+  //     "singleQuote": true,
+  //     "wrapAttributes": false,
+  //     "sortAttributes": false
+  //   }
+  // },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // "[vue]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vue3snippets.enable-compile-vue-file-on-did-save-code": false,
+  // 文本头
+  "fileheader.Author": "@rayl",
+  "fileheader.LastModifiedBy": "@rayl",
+  // 快捷浏览html页面
+  "view-in-browser.customBrowser": "chrome",
+  "open-in-browser.default": "chrome",
+  "minapp-vscode.disableAutoConfig": true
+}

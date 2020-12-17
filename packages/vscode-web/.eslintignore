@@ -1,0 +1,4 @@
+build/*.js
+src/vendor/*.js
+src/assets
+public

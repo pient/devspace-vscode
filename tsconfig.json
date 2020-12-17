@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.build.json",
+
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./packages",
+    "paths": {
+      "@devspace/common": ["common/src"],
+      "@devspace/core": ["core/src"],
+      "@devspace/apidoc": ["apidoc/src"]
+    },
+    "skipLibCheck": true,
+    "types": []
+  }
+}

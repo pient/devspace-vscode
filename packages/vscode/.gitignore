@@ -1,0 +1,9 @@
+out
+.vscode-test/
+*.vsix
+node_modules
+package-lock.json
+*.local
+.DS_Store
+tmp
+media/html

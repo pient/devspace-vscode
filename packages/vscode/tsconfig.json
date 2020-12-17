@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.json",
+
+  "compileOnSave": true,
+  
+  "compilerOptions": {
+    "outDir": "./out",
+    "lib": ["es6", "dom"],
+    "allowUnusedLabels": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ],
+
+  "exclude": ["node_modules", ".vscode-test"]
+}
